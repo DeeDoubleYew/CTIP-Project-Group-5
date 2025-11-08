@@ -12,8 +12,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS  ## WordCloud throws error without this
+from pathlib import Path
 
-file_path = "emails.csv" 
+file_path = Path("assets") / "datasets" / "emails.csv" 
 df = pd.read_csv(file_path)
 print("Shape:", df.shape)
 print("\nColumns:", df.columns.tolist())
