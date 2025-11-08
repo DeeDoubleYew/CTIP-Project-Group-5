@@ -3,22 +3,19 @@ import Home from './components/Home.vue'
 </script>
 
 <template>
+  <nav class="navbar bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="/logo.png" alt="Just Mail Solutions" class="img-fluid"
+          width="300" /></a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">About Us</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
   <Home />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style></style>
