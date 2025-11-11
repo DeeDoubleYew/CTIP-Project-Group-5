@@ -16,8 +16,8 @@
         </div>
       </div>
       <div class="row" name="submit button">
-        <div class="col-md m-2">
-          <button type="submit" class="btn bg-secondary">Submit</button>
+        <div class="col-md m-2 d-flex justify-content-center">
+          <button type="submit" class="btn btn-secondary bg-secondary">Submit</button>
         </div>
       </div>
     </form>
