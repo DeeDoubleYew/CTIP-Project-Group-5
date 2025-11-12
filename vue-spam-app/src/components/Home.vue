@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 const results = ref(null);
+const spamInput = ref("");
 
 function getResults() {
   results.value = 20;
@@ -10,9 +11,12 @@ function reset() {
   results.value = null;
 }
 
+//Model API Access
+const APIurl = "http://localhost:3000/model"; // Base URL for news items
+const modelResult = ref({}); //holds results from model
+
 </script>
 <template>
-
   <div class="container">
     <div class="row justify-content-center" name="heading">
       <div class="col-12 m-2 bg-secondary">
@@ -25,7 +29,7 @@ function reset() {
       <div class="row justify-content-center" name="input field">
         <div class="col-10 m-2">
           <textarea class="form-control" placeholder="Not sure if it's safe? Paste text here and let me help..."
-            rows="6"></textarea>
+            rows="6" v-model="spamInput"></textarea>
         </div>
       </div>
       <div class="row justify-content-center" name="submit button">
