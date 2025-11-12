@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
 import numpy as np
@@ -11,6 +12,19 @@ vectorizer = joblib.load("tfidf_vectorizer.joblib")
 scaler = joblib.load("scaler.joblib")
 
 app = FastAPI()
+
+
+origins = [
+    "http://localhost:4000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 URL_PATTERN = re.compile(r"http[s]?://\S+|www\.\S+")

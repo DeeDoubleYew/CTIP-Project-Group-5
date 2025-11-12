@@ -101,11 +101,13 @@ numeric_test_scaled  = scaler.transform(numeric_test)
 X_train_final = hstack([X_train_tfidf, numeric_train_scaled])
 X_test_final  = hstack([X_test_tfidf, numeric_test_scaled])
 
+X_train_final_array = X_train_final.toarray()
+
 logreg = LogisticRegression(C=0.3, class_weight={0:1, 1:4}, max_iter=1000, random_state=42)
-logreg.fit(X_train_final, y_train)
+logreg.fit(X_train_final_array, y_train)
 
 
-y_pred = logreg.predict(X_test_final)
+y_pred = logreg.predict(X_train_final_array)
 acc  = accuracy_score(y_test, y_pred)
 prec = precision_score(y_test, y_pred)
 rec  = recall_score(y_test, y_pred)
