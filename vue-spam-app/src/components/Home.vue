@@ -1,5 +1,14 @@
 <script setup>
-const results = 1;
+import { ref } from "vue";
+const results = ref(null);
+
+function getResults() {
+  results.value = 20;
+}
+
+function reset() {
+  results.value = null;
+}
 
 </script>
 <template>
@@ -21,7 +30,7 @@ const results = 1;
       </div>
       <div class="row justify-content-center" name="submit button">
         <div class="col-10 m-2 d-flex justify-content-center">
-          <button type="submit" class="btn btn-secondary bg-secondary">Submit</button>
+          <button type="button" class="btn btn-secondary bg-secondary" @click="getResults()">Submit</button>
         </div>
       </div>
     </form>
@@ -55,6 +64,11 @@ const results = 1;
             <button class="btn btn-secondary bg-secondary">View Detailed Report</button>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row justify-content-center" v-if="results">
+      <div class="col-10 m-2 d-flex justify-content-center">
+        <button type="button" class="btn btn-secondary bg-secondary" @click="reset()">Complete Another Search</button>
       </div>
     </div>
   </div>
