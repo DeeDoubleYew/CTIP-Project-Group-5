@@ -4,6 +4,11 @@ MODEL
 cd model
 For installing python dependancies, use "pip install -r requirements.txt"
 
+To Launch dev server for backend:
+
+1.  cd model(or open terminal here)
+2.  fastapi dev main.py
+
 FRONT-END
 cd spam-app
 For installing node dependancies npm install (necessary for first time)
