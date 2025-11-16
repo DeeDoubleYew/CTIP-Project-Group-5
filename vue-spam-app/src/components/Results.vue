@@ -20,7 +20,7 @@ async function getHistory() {
     });
 
     const responseData = await response.json();
-    alert(responseData + " :model success!");
+    //alert(responseData + " :model success!"); Debug alert
     resultHistory.value = responseData;
   } catch (error) {
     alert(error + " :model error!");
@@ -40,16 +40,34 @@ onMounted(async () => {
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-12">
-        <PieChart :data="resultHistory" />
+      <div class="row border m-1">
+        <div class="col-12 text-center">
+          <h2>Spam vs Ham</h2>
+        </div>
+        <div class="col-12">
+          <PieChart :data="resultHistory" />
+        </div>
       </div>
-      <div class="col-12">
-        <BarChart :data="resultHistory" />
+      <div class="row border m-1">
+        <div class="col-12 text-center">
+          <h2>Confidence Ratings</h2>
+        </div>
+        <div class="col-12">
+          <BarChart :data="resultHistory" />
+        </div>
       </div>
-      <div class="col-12">
-        <LineChart :data="resultHistory" />
+      <div class="row border m-1">
+        <div class="col-12 text-center">
+          <h2>Dataset Size</h2>
+        </div>
+        <div class="col-12">
+          <LineChart :data="resultHistory" />
+        </div>
       </div>
-      <div v-for="result in resultHistory" class="col-sm-10 col-md-6 col-lg-4 border">
+      <div class="col-12 text-center">
+        <h2>Raw Data</h2>
+      </div>
+      <div v-for="result in resultHistory" class="col-sm-10 col-md-6 col-lg-4 border m-1">
         <div class="row">
           <div class="col-12">
             <h6>Prediction: {{ result.prediction }}</h6>

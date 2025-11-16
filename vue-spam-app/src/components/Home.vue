@@ -16,6 +16,13 @@ function reset() {
   spamInput.value = "";
 }
 
+//get correct gauge path based on percentage
+function getGaugePath() {
+  // Map 0-100% to 1-8
+  const reading = Math.min(8, Math.max(1, Math.ceil((confidence.value / 100) * 8)));
+  return `/gauge${reading}.jpg`;
+}
+
 //Model API Access
 const APIurl = "http://127.0.0.1:8000/predict/"; // Base URL for predict function
 const modelResult = ref(null); //holds results from model
@@ -35,7 +42,7 @@ async function modelPOST() {
     });
 
     const responseData = await response.json();
-    alert(responseData + " :model success!");
+    //alert(responseData + " :model success!"); Debug alert
     modelResult.value = responseData;
     processResults();
   } catch (error) {
@@ -72,31 +79,21 @@ async function modelPOST() {
     <div class="row justify-content-center" v-if="modelResult" name="results">
       <div class="col-5 m-2 d-flex justify-content-center">
         <div class="row bg-primary">
-          <div class="col-12">
-            <img src="/guage.png" alt="spam detection guage" class="img-fluid" width="300" />
+          <div class="col-12 ">
+            <img :src=getGaugePath() alt="spam detection guage" class="rounded mx-auto d-block" width="200" />
           </div>
-          <div class="col-12">
+          <div class="col-12 text-center">
             <p>This email is likely to be {{ prediction }}, be cautious!</p>
           </div>
         </div>
       </div>
-      <div class="col-5 m-2 d-flex justify-content-center text-white">
+      <div class="col-5 m-2 d-flex text-center text-white">
         <div class="row bg-info">
           <div class="col-12">
-            <h4>CONFIDENCE SCORE: <span>{{ confidence }}%</span></h4>
+            <h4>CONFIDENCE SCORE: </h4>
           </div>
           <div class="col-12">
-            <h6>Why has this email been marked as spam?</h6>
-          </div>
-          <div class="col-12">
-            <ul>
-              <li>Contains one suspicious phrase</li>
-              <li>Has more than three spelling errors</li>
-              <li>Has use of urgent language</li>
-            </ul>
-          </div>
-          <div class="col-12 d-flex justify-content-center">
-            <button class="btn btn-secondary bg-secondary">View Detailed Report</button>
+            <h4>{{ confidence }}%</h4>
           </div>
         </div>
       </div>
