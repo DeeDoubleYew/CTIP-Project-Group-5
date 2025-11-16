@@ -1,0 +1,58 @@
+[
+  {
+    "id": "0563e92d",
+    "timestamp": "2025-11-16T12:34:07.758524",
+    "text": "1111dadaadaas",
+    "prediction": "spam",
+    "confidence": 55.54
+  },
+  {
+    "id": "90b96436",
+    "timestamp": "2025-11-16T12:49:00.546745",
+    "text": "Congratulations! You won $1000, click the link http://spam.com",
+    "prediction": "spam",
+    "confidence": 98.34
+  },
+  {
+    "id": "2f65bdec",
+    "timestamp": "2025-11-16T12:49:27.979682",
+    "text": "C",
+    "prediction": "spam",
+    "confidence": 55.62
+  },
+  {
+    "id": "2a92734c",
+    "timestamp": "2025-11-16T12:49:39.684793",
+    "text": "",
+    "prediction": "spam",
+    "confidence": 55.66
+  },
+  {
+    "id": "cb7beb68",
+    "timestamp": "2025-11-16T12:49:41.281465",
+    "text": "",
+    "prediction": "spam",
+    "confidence": 55.66
+  },
+  {
+    "id": "c427ee41",
+    "timestamp": "2025-11-16T12:49:42.650351",
+    "text": "",
+    "prediction": "spam",
+    "confidence": 55.66
+  },
+  {
+    "id": "a826056c",
+    "timestamp": "2025-11-16T12:55:54.759478",
+    "text": "12 21 sad ad sdd ",
+    "prediction": "spam",
+    "confidence": 50.89
+  },
+  {
+    "id": "32bbcd31",
+    "timestamp": "2025-11-16T12:56:40.567583",
+    "text": "12 21 sad ad sdd  juash hsdfbh hbdsfh hsdbfh hbsdhfb hsbdfhd hbsdhf",
+    "prediction": "spam",
+    "confidence": 50.33
+  }
+]

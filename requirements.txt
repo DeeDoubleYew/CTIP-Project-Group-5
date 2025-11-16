@@ -1,0 +1,12 @@
+fastapi
+fastapi[standard]
+pydantic
+joblib
+numpy
+scipy
+pandas
+seaborn
+matplotlib
+scikit-learn #sklearn deprecated
+pillow #required for wordcloud
+wordcloud
