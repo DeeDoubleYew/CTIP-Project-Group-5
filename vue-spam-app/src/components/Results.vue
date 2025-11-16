@@ -1,46 +1,27 @@
 <script setup>
 import { ref } from "vue";
-const spamInput = ref("");
-const prediction = ref(null);
-const confidence = ref(null);
 
-function processResults() {
-  prediction.value = modelResult.value.prediction;
-  confidence.value = modelResult.value.confidence;
-}
-
-function reset() {
-  modelResult.value = null;
-  prediction.value = null;
-  confidence.value = null;
-}
 
 //Model API Access
-const APIurl = "http://127.0.0.1:8000/predict/"; // Base URL for predict function
-const modelResult = ref(null); //holds results from model
-const processing = ref(false);
+const APIurl = "http://127.0.0.1:8000/history/"; // Base URL history db
+const resultHistory = ref([])
 
-async function modelPOST() {
-  processing.value = true;
+async function getHistory() {
   try {
-    let method = "POST";
+    let method = "GET";
     let endpoint = APIurl;
     const response = await fetch(endpoint, {
       method: method,
       headers: {
         "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ text: spamInput.value })
+      }
     });
 
     const responseData = await response.json();
     alert(responseData + " :model success!");
-    modelResult.value = responseData;
-    processResults();
+    resultHistory.value = responseData;
   } catch (error) {
     alert(error + " :model error!");
-  } finally {
-    processing.value = false;
   }
 }
 
