@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
-
+import PieChart from "../components/PieChart.vue";
+import BarChart from "../components/BarChart.vue";
+import LineChart from "../components/LineChart.vue";
 
 //Model API Access
 const APIurl = "http://127.0.0.1:8000/history/"; // Base URL history db
@@ -37,7 +39,16 @@ onMounted(async () => {
         <h1 class="fw-normal text-white">IAMM - Result History</h1>
       </div>
     </div>
-    <div class="row justify-content-center" style="height: 50px;" name="results">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <PieChart :data="resultHistory" />
+      </div>
+      <div class="col-12">
+        <BarChart :data="resultHistory" />
+      </div>
+      <div class="col-12">
+        <LineChart :data="resultHistory" />
+      </div>
       <div v-for="result in resultHistory" class="col-sm-10 col-md-6 col-lg-4 border">
         <div class="row">
           <div class="col-12">
