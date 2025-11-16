@@ -22,13 +22,25 @@ if not os.path.exists(HISTORY_FILE):
     with open(HISTORY_FILE, "w") as f:
         json.dump([], f)
 
-# Load history
-with open(HISTORY_FILE, "r") as f:
-    history = json.load(f)
 
 def save_history():
     with open(HISTORY_FILE, "w") as f:
         json.dump(history, f, indent=2)
+
+# Load history
+try:
+    with open(HISTORY_FILE, "r") as f:
+        data = f.read().strip()
+
+        if not data:
+            history = []
+            save_history()  # rewrite clean JSON
+        else:
+            history = json.loads(data)
+
+except Exception:
+    history = []
+    save_history()
 
 
 # pydantic model for input data validation
