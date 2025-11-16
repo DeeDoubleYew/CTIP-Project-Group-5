@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-const results = ref(null);
 const spamInput = ref("");
 const prediction = ref(null);
 const confidence = ref(null);
