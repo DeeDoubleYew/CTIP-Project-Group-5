@@ -82,7 +82,7 @@ app = FastAPI()
 
 # Allow API access for locally hosted endpoints
 origins = [
-    "http://localhost:5173"
+    "http://localhost:5173",
     "http://localhost:4000"
 ]
 
