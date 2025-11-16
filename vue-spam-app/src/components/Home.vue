@@ -68,11 +68,15 @@ async function modelPOST() {
         <div class="col-10 m-2">
           <textarea class="form-control" placeholder="Not sure if it's safe? Paste text here and let me help..."
             rows="6" v-model="spamInput"></textarea>
+          <p v-if="spamInput.length < 10">"Input too short! Minimum 10 characters."</p>
         </div>
       </div>
       <div class="row justify-content-center" name="submit button">
         <div class="col-10 m-2 d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary bg-secondary" @click="modelPOST()">Submit</button>
+          <button type="button" class="btn btn-secondary bg-secondary" @click="modelPOST()"
+            v-if="spamInput.length > 10">Submit</button>
+          <button type="button" class="btn btn-secondary bg-secondary disabled" @click="modelPOST()"
+            v-if="spamInput.length < 10">Submit</button>
         </div>
       </div>
     </form>
