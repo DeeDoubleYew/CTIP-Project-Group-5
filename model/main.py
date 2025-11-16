@@ -102,15 +102,6 @@ app.add_middleware(
 def predict_spam(data: EmailInput):
     try:
         text = data.text
-
-       #require at least 10 words
-
-        if len(text.strip().split()) < 10:
-            raise HTTPException(
-                status_code=400,
-                detail="Input text must contain at least 10 words."
-            )
-
         cleaned = clean_text(text)
         char_len = len(cleaned)
         word_len = len(cleaned.split())
