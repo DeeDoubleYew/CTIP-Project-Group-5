@@ -13,6 +13,7 @@ function reset() {
   modelResult.value = null;
   prediction.value = null;
   confidence.value = null;
+  spamInput.value = "";
 }
 
 //Model API Access

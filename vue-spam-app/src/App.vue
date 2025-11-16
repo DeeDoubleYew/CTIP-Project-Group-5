@@ -16,6 +16,9 @@ import { RouterLink } from 'vue-router';
         <li class="nav-item">
           <router-link class="nav-link active" to="/about">About Us</router-link>
         </li>
+        <li class="nav-item">
+          <router-link class="nav-link active" to="/results">Result History</router-link>
+        </li>
       </ul>
     </div>
   </nav>
