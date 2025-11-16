@@ -7,12 +7,10 @@ import { ref } from "vue";
     <div class="col-sm-10 col-md-10 col-lg-4">
       <h1>About</h1>
       <p>
-        This application is a Vue 3 project developed as part of a university
-        assignment for COS30043 at Swinburne University. It demonstrates the use
-        of modern web technologies such as Vue.js, Vue Router, Bootstrap, and
-        client-side pagination. The site features a home page, an about section,
-        and a news page that dynamically loads and paginates news items,
-        providing users with an interactive and responsive experience.
+        At Just Mail Solutions, we harness the power of machine learning to help individuals and businesses combat spam
+        and unwanted emails. Our mission is to make inboxes smarter, safer, and more efficient by providing advanced
+        tools that accurately identify and filter out unwanted messages. With a focus on innovation and reliability, we
+        strive to give our users peace of mind and more control over their digital communication.
       </p>
     </div>
   </div>
