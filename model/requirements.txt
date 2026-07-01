@@ -7,6 +7,6 @@ scipy
 pandas
 seaborn
 matplotlib
-scikit-learn #sklearn deprecated
+scikit-learn==1.4.1.post1 #sklearn deprecated
 pillow #required for wordcloud
 wordcloud
